@@ -12,3 +12,24 @@ function addStudent() {
         document.getElementById("studentName").value = "";
     }
 }
+
+
+const searchBox = document.getElementById("searchBox");
+
+searchBox.addEventListener("keyup", function () {
+
+    let searchValue = this.value.toLowerCase();
+
+    let students = document.querySelectorAll("#studentList li");
+
+    students.forEach(function(student) {
+
+        if(student.innerText.toLowerCase().includes(searchValue)) {
+            student.style.display = "";
+        } else {
+            student.style.display = "none";
+        }
+
+    });
+
+});
