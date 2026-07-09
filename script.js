@@ -2,17 +2,17 @@ function addStudent() {
 
     let name = document.getElementById("studentName").value;
 
-    if(name !== "") {
+    if (name !== "") {
 
         let li = document.createElement("li");
-        li.innerText = name;
+
+        li.innerHTML = name + ' <button onclick="this.parentElement.remove()">Delete</button>';
 
         document.getElementById("studentList").appendChild(li);
 
         document.getElementById("studentName").value = "";
     }
 }
-
 
 const searchBox = document.getElementById("searchBox");
 
