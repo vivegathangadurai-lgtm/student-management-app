@@ -1,3 +1,8 @@
+function updateCount() {
+    document.getElementById("count").innerText =
+        document.getElementById("studentList").children.length;
+}
+
 function addStudent() {
 
     let name = document.getElementById("studentName").value;
@@ -5,31 +10,12 @@ function addStudent() {
     if (name !== "") {
 
         let li = document.createElement("li");
-
-        li.innerHTML = name + ' <button onclick="this.parentElement.remove()">Delete</button>';
+        li.innerText = name;
 
         document.getElementById("studentList").appendChild(li);
+
+        updateCount();
 
         document.getElementById("studentName").value = "";
     }
 }
-
-const searchBox = document.getElementById("searchBox");
-
-searchBox.addEventListener("keyup", function () {
-
-    let searchValue = this.value.toLowerCase();
-
-    let students = document.querySelectorAll("#studentList li");
-
-    students.forEach(function(student) {
-
-        if(student.innerText.toLowerCase().includes(searchValue)) {
-            student.style.display = "";
-        } else {
-            student.style.display = "none";
-        }
-
-    });
-
-});
