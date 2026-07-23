@@ -1,3 +1,4 @@
+# CI workflow test
 name: Student Management App CI
 
 on:
